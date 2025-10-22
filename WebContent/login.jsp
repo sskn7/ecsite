@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,12 +60,12 @@ table{
    <div id="header">
       <div id="pr">
       </div>
-      
+
       <div id="main">
          <div id="top">
           <p>Login</p>
          </div>
-         
+
          <div>
             <h3>商品を購入する祭にはログインをお願いします。</h3>
             <s:form action="LoginAction">
@@ -84,7 +84,7 @@ table{
             </div>
          </div>
       </div>
-      
+
       <div id="footer">
          <div id="pr">
          </div>
