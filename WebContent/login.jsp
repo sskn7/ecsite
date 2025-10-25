@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css">
-<meta http-equiv="Content-Sctipt-Type" content="text/javascript">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
 <meta http-equiv="imagetoolbar" content="no">
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -20,7 +20,7 @@ body{
    line-height:1.6;
    letter-spacing:1px;
    font-family:Verdana,Helvetica,sans-serif;
-   dont-size:12px;
+   font-size:12px;
    color:#333;
    background:#fff;
 }
@@ -29,7 +29,7 @@ table{
    margin:0 auto;
 }
 /*==========ID LAYOUT==========*/
-#top{
+#top {
    width:780px;
    margin:30px auto;
    border:1px solid #333;
@@ -41,7 +41,7 @@ table{
 }
 #main{
    width:100%;
-   heigth:500px;
+   height:500px;
    text-align:center;
 }
 #footer{
@@ -52,7 +52,7 @@ table{
 }
 #text-link{
    display:inline-block;
-   text-akign:right;
+   text-align:right;
 }
 </style>
 </head>
@@ -60,6 +60,7 @@ table{
    <div id="header">
       <div id="pr">
       </div>
+   </div>
 
       <div id="main">
          <div id="top">
@@ -67,7 +68,7 @@ table{
          </div>
 
          <div>
-            <h3>商品を購入する祭にはログインをお願いします。</h3>
+            <h3>商品を購入する際にはログインをお願いします。</h3>
             <s:form action="LoginAction">
                <s:textfield name="loginUserId"/>
                <s:password name="loginPassword"/>
@@ -89,6 +90,5 @@ table{
          <div id="pr">
          </div>
       </div>
-   </div>
 </body>
 </html>

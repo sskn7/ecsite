@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +17,7 @@
 /*==========TAGLAYOUT==========*/
    body{
       margin:0;
-      paddimg:0;
+      padding:0;
       line-height:1.6;
       letter-spacing:1px;
       font-family:Verdana,Helvetica,sans-serif;
@@ -112,6 +113,7 @@
                <td>
                   <input type="radio" name="pay" value="1" checked="checked">現金払い
                   <input type="radio" name="pay" value="2" checked="checked">クレジットカード
+               </td>
             </tr>
 
             <tr>
@@ -124,8 +126,8 @@
          </s:form>
 
             <div>
-               <p>全画面に戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a>
-               <p>マイページは<a href='<s: url action="MyPageAction"/>'>こちら</a>
+               <p>全画面に戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
+               <p>マイページは<a href='<s:url action="MyPageAction"/>'>こちら</a></p>
             </div>
       </div>
    </div>
