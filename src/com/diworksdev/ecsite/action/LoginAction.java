@@ -4,19 +4,22 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.diworksdev.ecsite.dao.BuyItemDAO;
+import com.diworksdev.ecsite.dao.LoginDAO;
+import com.diworksdev.ecsite.dto.BuyItemDTO;
 import com.diworksdev.ecsite.dto.LoginDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport implements SessionAware {
 	private String loginUserId;
 	private String loginPassword;
-	public Map<String.Object>session;
+	public Map<String,Object>session;
 	private LoginDAO loginDAO = new LoginDAO();
 	private LoginDTO loginDTO = new LoginDTO();
 	private BuyItemDAO buyItemDAO = new BuyItemDAO();
 
 	public String execute() {
-		String reult = ERROR;
+		String result = ERROR;
 		loginDTO = loginDAO.getLoginUserInfo(loginUserId,loginPassword);
 		session.put("loginUser",loginDTO);
 
@@ -35,14 +38,14 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	public String getLoginUserId() {
 		return loginUserId;
 	}
-	public String getLoginUserId(String loginUserId) {
+	public void getLoginUserId(String loginUserId) {
 		this.loginUserId = loginUserId;
 	}
 
 	public String getLoginPassword() {
 		return loginPassword;
 	}
-	public String getLoginUserPassword(String loginPassword) {
+	public void getLoginUserPassword(String loginPassword) {
 		this.loginUserId = loginPassword;
 	}
 

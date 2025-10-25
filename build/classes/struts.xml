@@ -5,10 +5,4 @@
 <!-- Strutsの詳細設定 -->
 <struts>
 
-   <constant name="struts.devMode" value="true"/>
-
-   <package name="com.diworksdev.ecsite.action" extends="struts-default">
-
-   </package>
-
 </struts>
