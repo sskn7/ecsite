@@ -10,7 +10,7 @@
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
-<title>UserCreate画面</title>
+<title>UserCreateConfirm画面</title>
 
 <style type="text/css">
 /*==========TAG LAYOUT==========*/
@@ -20,6 +20,7 @@ body{
    line-height:1.6;
    letter-spacing:1px;
    font-family:Verdana,Helvetica,sans-serif;
+   font-size:12px;
    color:#333;
    background:#fff;
 }
@@ -30,13 +31,13 @@ table{
 }
 
 /*==========ID LAYOUT==========*/
-#top {
+#top{
    width:780px;
    margin:30px auto;
    border:1px solid #333;
 }
 
-#header{
+#header {
    width:100%;
    height:80px;
    background-color:black;
@@ -48,68 +49,63 @@ table{
    text-align:center;
 }
 
-#footer {
+#footer{
    width:100%;
-   height:80px;
+   height:500px;
    background-color:black;
-   celar:both;
+   clear:both;
 }
-
 </style>
 </head>
 <body>
    <div id="header">
-      <div id="pr"
-      ></div>
+      <div id="pr">
+      </div>
    </div>
 
    <div id="main">
       <div id="top">
-         <p>UserCreate</p>
+         <p>UserCreateConfirm</p>
       </div>
 
       <div>
-         <s:if test="errorMessage !=''">
-            <s:property value="errorMessage" escape="false"/>
-         </s:if>
-
+         <h3>登録する内容は以下でよろしいですか。</h3>
          <table>
-            <s:form action="UserCreateConfirmAction">
+            <s:form action="UserCreateCompleteAction">
                <tr>
-                  <td>
+                  <td id="box">
                      <label>ログインID:</label>
                   </td>
                   <td>
-                     <input type="text" name="loginUserId" value=""/>
+                     <s:property value="loginUserId" escape="false"/>
                   </td>
                </tr>
 
-               <tr>
+               <tr id="box">
                   <td>
                      <label>ログインPASS:</label>
                   </td>
                   <td>
-                     <input type="text" name="loginPassword" value=""/>
+                     <s:property value="loginPassword" escape="false"/>
+                  </td>
+               </tr>
+
+               <tr id="box">
+                  <td>
+                     <label>ユーザー名:</label>
+                  </td>
+                  <td>
+                     <s:property value="userName" escape="false"/>
                   </td>
                </tr>
 
                <tr>
                   <td>
-                     <label>ユーザー名:</label>
-                  </td>
-                  <td>
-                     <input type="text" name="userName" value=""/>
+                     <s:submit value="完了"/>
                   </td>
                </tr>
-
-               <s:submit value="登録"/>
             </s:form>
          </table>
-
-         <div>
-            <span>全画面に戻る場合は</span>
-            <a href='<s:url action="HomeAction"/>'>こちら</a>
-         </div>
       </div>
    </div>
 
