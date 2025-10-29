@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.diworksdev.ecsite.dao.UserCreateCompleteDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserCreateCompleteAction extends ActionSupport implements SessionAware {
@@ -16,7 +17,7 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 	private UserCreateCompleteDAO userCreateCompleteDAO = new UserCreateCompleteDAO();
 
 	public String execute() throws SQLException {
-		userCreateCompleteDAO.createUser(session.get("loginUserId").toString(),
+		userCreateCompleteDAO.cerateUser(session.get("loginUserId").toString(),
 				session.get("loginPassword").toString(),
 				session.get("userName").toString());
 
