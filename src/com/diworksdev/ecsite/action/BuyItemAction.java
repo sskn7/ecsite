@@ -23,4 +23,17 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 			payment = "クレジットカード"; session.put("pay",payment);
 		}   return result;
 	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public void setPay(String pay) {
+		this.pay = pay;
+	}
+
+	@Override
+	public void setSession(Map<String,Object>session) {
+		this.session = session;
+	}
 }
