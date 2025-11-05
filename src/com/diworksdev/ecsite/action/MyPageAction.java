@@ -6,11 +6,13 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.diworksdev.ecsite.dao.MyPageDAO;
+import com.diworksdev.ecsite.dto.MyPageDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class MyPageAction extends ActionSupport implements SessionAware {
 	public Map<String,Object>session;
-	private MyPageDAO myPageDAO = new MyPage();
+	private MyPageDAO myPageDAO = new MyPageDAO();
 	private ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
 	private String deleteFlg;
 	private String message;
@@ -26,7 +28,7 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id,user_master_id);
 		}   else if(deleteFlg.equals("1")) {
 			delete();
-		}   String result;
+		}   String result = SUCCESS;
 		    return result;
 	}
 
