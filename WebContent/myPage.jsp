@@ -39,7 +39,7 @@ table {
 
 #header {
    width:100%;
-   height:500px;
+   height:80px;
    background-color:black;
 }
 
@@ -106,7 +106,7 @@ table {
          </s:elseif>
 
          <s:if test="message != null">
-            <h3><s:property value=""message"/></h3>
+            <h3><s:property value="message"/></h3>
          </s:if>
 
          <div id="text-right">

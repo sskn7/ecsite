@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
 import com.diworksdev.ecsite.dto.MyPageDTO;
 import com.diworksdev.ecsite.util.DBConnector;
 
@@ -28,7 +29,9 @@ public class MyPageDAO {
 			 preparedStatement.setString(1,item_transaction_id);
 			 preparedStatement.setString(2,user_master_id);
 
-			 ResultSet(resultSet.next()) {
+			 ResultSet resultSet = preparedStatement.executeQuery();
+
+			 while(resultSet.next()) {
 				 MyPageDTO dto = new MyPageDTO();
 				 dto.setId(resultSet.getString("id"));
 				 dto.setItemName(resultSet.getString("item_name"));
