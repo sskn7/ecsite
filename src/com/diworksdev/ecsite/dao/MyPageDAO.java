@@ -24,7 +24,41 @@ public class MyPageDAO {
 		 		+ "ORDER BY insert_date DESC";
 
 		 try {
+			 PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			 preparedStatement.setString(1,item_transaction_id);
+			 preparedStatement.setString(2,user_master_id);
 
-		 }
+			 ResultSet(resultSet.next()) {
+				 MyPageDTO dto = new MyPageDTO();
+				 dto.setId(resultSet.getString("id"));
+				 dto.setItemName(resultSet.getString("item_name"));
+				 dto.setTotalPrice(resultSet.getString("total_price"));
+				 dto.setTotalCount(resultSet.getString("total_count"));
+				 dto.setPayment(resultSet.getString("pay"));
+				 dto.setInsert_date(resultSet.getString("insert_date"));
+				 myPageDTO.add(dto);
+			 }
+		 }   catch(Exception e) {
+			 e.printStackTrace();
+		 }   finally {
+			 connection.close();
+		 }   return myPageDTO;
+	}    public int buyItemHistoryDelete(String item_transaction_id,String user_master_id) throws SQLException {
+		String sql = "DELETE FROM user_buy_item_transaction"
+				+ "WHERE item_transaction_id=?"
+				+ "AND user_master_id = ?";
+
+		PreparedStatement preparedStatement;
+		int result = 0;
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1,item_transaction_id);
+			preparedStatement.setString(2,user_master_id);
+			result = preparedStatement.executeUpdate();
+		}   catch(SQLException e) {
+			e.printStackTrace();
+		}   finally {
+			connection.close();
+		}   return result;
 	}
 }

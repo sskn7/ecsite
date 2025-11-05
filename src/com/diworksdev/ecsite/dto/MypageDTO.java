@@ -1,6 +1,6 @@
 package com.diworksdev.ecsite.dto;
 
-public class MypageDTO {
+public class MyPageDTO {
 	public String itemName;
 	public String totalPrice;
 	public String totalCount;
