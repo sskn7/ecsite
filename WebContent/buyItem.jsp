@@ -78,7 +78,6 @@
                </td>
                <td>
                   <s:property value="session.buyItem_name"/>
-                  <span>円</span>
                </td>
              </tr>
 
@@ -88,6 +87,7 @@
                </td>
                <td>
                   <s:property value="session.buyItem_price"/>
+                  <span>円</span>
                </td>
             </tr>
 
@@ -96,7 +96,7 @@
                   <span>購入個数</span>
                </td>
                <td>
-                  <select>
+                  <select name="count">
                      <option value="1" selected="selected">1</option>
                      <option value="2">2</option>
                      <option value="3">3</option>
