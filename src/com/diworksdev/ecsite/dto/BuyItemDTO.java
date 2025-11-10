@@ -16,7 +16,7 @@ public class BuyItemDTO {
 		return itemPrice;
 	}
 	public void setItemPrice(String itemPrice) {
-		this.itemName = itemPrice;
+		this.itemPrice = itemPrice;
 	}
 
 	public int getId() {

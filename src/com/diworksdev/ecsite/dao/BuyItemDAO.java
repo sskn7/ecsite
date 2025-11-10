@@ -22,6 +22,10 @@ public class BuyItemDAO {
 				buyItemDTO.setId(resultSet.getInt("id"));
 				buyItemDTO.setItemName(resultSet.getString("item_name"));
 				buyItemDTO.setItemPrice(resultSet.getString("item_price"));
+				System.out.println("BuyItemDAO");
+				System.out.println(resultSet.getInt("id"));
+				System.out.println(resultSet.getString("item_name"));
+				System.out.println(resultSet.getString("item_price"));
 			}
 		}  catch (Exception e) {
 			e.printStackTrace();
