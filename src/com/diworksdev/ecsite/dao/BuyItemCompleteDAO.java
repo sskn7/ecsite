@@ -16,25 +16,18 @@ public class BuyItemCompleteDAO {
 		String sql = "INSERT INTO user_buy_item_transaction(item_transaction_id,total_price,total_count,user_master_id,pay,insert_date) VALUES(?,?,?,?,?,?)";
 
 		try {
-		    connection.setAutoCommit(false); // 明示的にトランザクション開始
-		    PreparedStatement ps = connection.prepareStatement(sql);
-		    ps.setString(1, item_transaction_id);
-		    ps.setString(2, total_price);
-		    ps.setString(3, total_count);
-		    ps.setString(4, user_master_id);
-		    ps.setString(5, pay);
-		    ps.setString(6, dateUtil.getDate());
-
-		    int result = ps.executeUpdate(); // ← 件数を確認
-		    System.out.println("挿入件数: " + result);
-
-		    connection.commit(); // ← 忘れずにコミット
-		} catch (Exception e) {
-		    e.printStackTrace();
-		    connection.rollback(); // エラー時はロールバック
-		} finally {
-		    connection.close();
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1,item_transaction_id);
+			preparedStatement.setString(2,total_price);
+			preparedStatement.setString(3,total_count);
+			preparedStatement.setString(4,user_master_id);
+			preparedStatement.setString(5,pay);
+			preparedStatement.setString(6,dateUtil.getDate());
+			preparedStatement.execute();
+		}   catch(Exception e) {
+			e.printStackTrace();
+		}   finally {
+			connection.close();
 		}
-
 	}
 }
