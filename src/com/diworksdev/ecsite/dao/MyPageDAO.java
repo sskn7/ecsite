@@ -51,8 +51,8 @@ public class MyPageDAO {
          }
 
 	    public int buyItemHistoryDelete(String item_transaction_id,String user_master_id) throws SQLException {
-		String sql = "DELETE FROM user_buy_item_transaction"
-				+ "WHERE item_transaction_id=?"
+		String sql = "DELETE FROM user_buy_item_transaction "
+				+ "WHERE item_transaction_id=? "
 				+ "AND user_master_id = ?";
 
 		PreparedStatement preparedStatement;
